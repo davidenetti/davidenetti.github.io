@@ -1,0 +1,60 @@
+/* Reset base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.6;
+    background-color: #ffffff; /* Sfondo bianco pulito */
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.main-header {
+    background-color: #800020;
+    color: #ffffff;
+    padding: 60px 0;
+    text-align: center;
+    margin-bottom: 40px;
+    border-bottom: 5px solid #600018;
+
+.main-header h1 a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.main-header .description {
+    opacity: 0.8;
+    font-size: 1.1rem;
+    margin-top: 10px;
+}
+
+/* Contenuto principale */
+.content {
+    padding: 20px 0;
+}
+
+h2, h3 {
+    color: #800020;
+    margin-bottom: 20px;
+}
+
+/* Footer semplice */
+.main-footer {
+    text-align: center;
+    padding: 40px 0;
+    margin-top: 60px;
+    border-top: 1px solid #eee;
+    font-size: 0.9rem;
+    color: #777;
+}
