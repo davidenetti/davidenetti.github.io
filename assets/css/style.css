@@ -61,3 +61,32 @@ h2, h3 {
     font-size: 0.9rem;
     color: #777;
 }
+
+.content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.content li {
+    margin-bottom: 10px;
+}
+
+.content a {
+    text-decoration: none;
+    color: #800020;
+    font-weight: 500;
+}
+
+.content a:hover {
+    text-decoration: underline;
+}
+
+.content span {
+    color: #777;
+    font-size: 0.9rem;
+}
+
+body {
+    max-width: 900px;
+    margin: 0 auto;
+}
