@@ -1,5 +1,4 @@
 ---
-layout: home
-title: Benvenuti
+title: Personal blog about stuffs i'm working on.
 ---
-Personal blog about stuffs i'm working on.
+# Hello, World!
