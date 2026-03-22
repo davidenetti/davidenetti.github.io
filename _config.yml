@@ -1,0 +1,11 @@
+title: Personal blog
+description: Personal blog where i publish stuff i'm working on.
+baseurl: ""
+url: "https://davidenetti.github.io"
+
+remote_theme: pages-themes/architect@v0.2.0
+
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-remote-theme
