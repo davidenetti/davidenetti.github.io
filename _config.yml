@@ -1,6 +1,6 @@
 title: "Personal blog"
 description: "Personal blog where i publish stuffs i'm working on."
-baseurl: "https://davidenetti.github.io"
+baseurl: ""
 url: "https://davidenetti.github.io"
 
 markdown: kramdown
