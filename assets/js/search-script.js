@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
             resultsContainer: resultsContainer,
             json: jsonPath,
             // Search result template with dynamic variables
-            searchResultTemplate: '<li><a href="{url}">{title}</a> <span class="post-date">({date})</span></li>',
+            searchResultTemplate: '<li><a href="{url}"><span class="title">{title}</span><span class="date">{date}</span></a></li>',
             // Displayed when no matches are found
             noResultsText: '<li>No results found.</li>',
             // Limit results to keep the UI clean
