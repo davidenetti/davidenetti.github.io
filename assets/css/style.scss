@@ -42,7 +42,7 @@ h1, h2, h3 {
 .main-header {
     background-color: $primary-color;
     color: #ffffff;
-    padding: 60px 0;
+    padding: 40px 0; /* Reduced from 60px to make the header shorter */
     text-align: center;
     margin-bottom: 40px;
     border-bottom: 5px solid $dark-red;
@@ -50,61 +50,40 @@ h1, h2, h3 {
     h1 a {
         color: #ffffff;
         text-decoration: none;
-        font-size: 3rem;
+        font-size: 2.5rem; /* Slightly reduced from 3rem for a more balanced look */
         font-weight: 700;
     }
 
     .description {
         opacity: 0.8;
         font-size: 1.1rem;
-        margin-top: 10px;
-    }
-}
-
-.main-nav {
-    margin-top: 25px;
-    
-    a {
-        color: rgba(255, 255, 255, 0.8);
-        text-decoration: none;
-        margin: 0 15px;
-        font-weight: 500;
-        transition: all 0.3s ease;
-        padding-bottom: 5px;
-
-        &:hover {
-            color: #fff;
-            border-bottom: 2px solid #fff;
-        }
+        margin-top: 5px; /* Reduced from 10px to save vertical space */
     }
 }
 
 /* 4. POST LISTING */
-.post-list {
-    margin-top: 30px;
-}
-
 .post-item {
     margin-bottom: 40px;
     padding-bottom: 30px;
     border-bottom: 1px solid $border-color;
 
-    /* Prevents double borders when followed by the footer */
+    /* Using flexbox to align Title and Date on the same line */
+    .post-header {
+        display: flex;
+        justify-content: flex-start;
+        align-items: baseline; /* Aligns text by the bottom of the letters */
+        gap: 15px; /* Space between title and date */
+        margin-bottom: 10px;
+    }
+
     &:last-child {
         border-bottom: none;
     }
 }
 
-.post-meta {
-    font-size: 0.9rem;
-    color: $text-light;
-    display: block;
-    margin-bottom: 8px;
-}
-
 .post-title {
-    margin-bottom: 12px;
-    font-size: 1.8rem;
+    margin: 0;
+    font-size: 1.4rem;
     
     a {
         text-decoration: none;
@@ -117,10 +96,10 @@ h1, h2, h3 {
     }
 }
 
-.post-excerpt {
-    color: #555;
-    font-size: 1.1rem;
-    line-height: 1.7;
+.post-meta {
+    font-size: 0.85rem;
+    color: $text-light;
+    white-space: nowrap; /* Prevents the date from wrapping to a new line */
 }
 
 /* 5. FOOTER & SOCIAL LINKS */
