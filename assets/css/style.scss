@@ -10,6 +10,7 @@ $dark-red: #600018;
 $text-main: #333;
 $text-light: #777;
 $border-color: #eee;
+$accent-yellow: #ffcc00;
 
 /* 2. BASE RESET */
 * {
@@ -23,7 +24,6 @@ body {
     line-height: 1.6;
     background-color: #ffffff;
     color: $text-main;
-    /* Max-width is handled by the .container class for better flexibility */
 }
 
 h1, h2, h3 {
@@ -31,7 +31,6 @@ h1, h2, h3 {
     font-weight: 700;
 }
 
-/* Layout container for consistent alignment */
 .container {
     max-width: 800px;
     margin: 0 auto;
@@ -51,7 +50,6 @@ h1, h2, h3 {
         color: #ffffff;
         text-decoration: none;
         font-size: 2.5rem;
-        font-weight: 700;
     }
 
     .description {
@@ -60,193 +58,162 @@ h1, h2, h3 {
         margin-top: 5px;
     }
 }
+
 .main-nav {
     margin-top: 25px;
     display: flex;
     justify-content: center;
-    gap: 15px; /* Increased spacing between nav items */
+    gap: 15px;
     
     a {
         color: #ffffff;
         text-decoration: none;
         font-weight: 500;
-        font-size: 1.05rem;
         transition: all 0.3s ease;
         padding-bottom: 4px;
-        border-bottom: 2px solid transparent; /* Prevents layout jump on hover */
+        border-bottom: 2px solid transparent;
 
         &:hover {
-            color: #ffcc00;
-            border-bottom: 2px solid #ffcc00;
-            transform: translateY(-1px);
+            color: $accent-yellow;
+            border-bottom: 2px solid $accent-yellow;
         }
     }
 }
 
-/* 4. SEARCH BAR STYLING */
+/* 4. SEARCH BAR (Floating Spotlight Style) */
 #search-container {
-    position: relative; /* Essential to anchor the floating results */
-    max-width: 400px;
-    margin: 20px auto 0; /* Centers the bar and gives space from nav */
+    position: relative;
+    max-width: 450px;
+    margin: 25px auto 0;
     z-index: 100;
+
+    /* Search Icon Decoration */
+    &::before {
+        content: '\f002'; /* FontAwesome Search Icon */
+        font-family: 'Font Awesome 6 Free';
+        font-weight: 900;
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: $text-light;
+        pointer-events: none;
+        z-index: 10;
+    }
 }
 
 #search-input {
     width: 100%;
-    padding: 12px 20px;
+    padding: 12px 15px 12px 40px; /* Extra padding-left for the icon */
     font-family: $font-body;
     font-size: 0.95rem;
-    color: $text-main;
-    background-color: rgba(255, 255, 255, 0.95);
-    border: 2px solid transparent;
-    border-radius: 25px; /* Rounded pill shape */
+    background: #fff;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     outline: none;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
 
     &:focus {
-        background-color: #ffffff;
-        border-color: #ffcc00; /* Matching your hover color */
-        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+        transform: translateY(-1px);
     }
 }
 
-/* Floating Results Dropdown */
 #results-container {
-    position: absolute; /* Floats over the content */
-    top: calc(100% + 10px);
+    position: absolute;
+    top: calc(100% + 8px);
     left: 0;
     right: 0;
-    background: #ffffff;
+    background: #fff;
     list-style: none;
-    padding: 10px 0;
-    margin: 0;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-    max-height: 300px;
-    overflow-y: auto; /* Scroll if many results */
-    text-align: left;
-    
-    /* Hide if empty (Simple-Jekyll-Search will fill it) */
-    &:empty {
-        display: none;
-    }
-}
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    max-height: 350px;
+    overflow-y: auto;
+    padding: 8px 0;
 
-#results-container li {
-    padding: 0;
-    border-bottom: 1px solid #f0f0f0;
+    &:empty { display: none; }
 
-    &:last-child {
-        border-bottom: none;
-    }
+    li {
+        border-bottom: 1px solid #f5f5f5;
+        &:last-child { border-bottom: none; }
 
-    a {
-        display: block;
-        padding: 12px 20px;
-        color: $text-main;
-        text-decoration: none;
-        font-weight: 500;
-        transition: background 0.2s;
+        a {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 18px;
+            text-decoration: none;
+            color: $text-main;
+            font-weight: 500;
+            
+            &:hover {
+                background: #fcfcfc;
+                color: $primary-color;
+                .date { color: $primary-color; opacity: 0.8; }
+            }
 
-        &:hover {
-            background-color: #f8f8f8;
-            color: $primary-color;
+            .title {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                margin-right: 15px;
+            }
+
+            .date {
+                font-size: 0.75rem;
+                color: $text-light;
+                font-weight: 400;
+                flex-shrink: 0; /* Prevents the date from squeezing */
+            }
         }
     }
-
-    .post-date {
-        display: block;
-        font-size: 0.75rem;
-        color: $text-light;
-        margin-top: 2px;
-    }
 }
 
-/* Customizing the "No Results" message style */
-#results-container li:only-child:not(:has(a)) {
-    padding: 15px 20px;
-    color: $text-light;
-    font-style: italic;
-    font-size: 0.9rem;
-}
-
-/* 5. POST LISTING */
+/* 5. POST LISTING & CONTENT */
 .post-item {
     margin-bottom: 40px;
     padding-bottom: 30px;
     border-bottom: 1px solid $border-color;
 
-    /* Using flexbox to align Title and Date on the same line */
     .post-header {
         display: flex;
         justify-content: flex-start;
-        align-items: baseline; /* Aligns text by the bottom of the letters */
-        gap: 15px; /* Space between title and date */
+        align-items: baseline;
+        gap: 15px;
         margin-bottom: 10px;
     }
-
-    &:last-child {
-        border-bottom: none;
-    }
+    &:last-child { border-bottom: none; }
 }
 
 .post-title {
-    margin: 0;
     font-size: 1.4rem;
-    
     a {
         text-decoration: none;
         color: $text-main;
-        transition: color 0.2s ease;
-
-        &:hover {
-            color: $primary-color;
-        }
+        &:hover { color: $primary-color; }
     }
 }
 
 .post-meta {
     font-size: 0.85rem;
     color: $text-light;
-    white-space: nowrap; /* Prevents the date from wrapping to a new line */
 }
 
-/* 6. FOOTER & SOCIAL LINKS */
+/* 6. FOOTER */
 .main-footer {
     text-align: center;
     padding: 60px 0;
     margin-top: 40px;
     border-top: 1px solid $border-color;
     color: $text-light;
-    font-size: 0.95rem;
-
-    p { margin-top: 10px; }
 }
 
-.social-links {
-    margin-bottom: 15px;
-    
-    a {
-        color: $text-light;
-        font-size: 1.5rem;
-        margin: 0 12px;
-        transition: color 0.2s ease;
-
-        &:hover {
-            color: $primary-color;
-        }
-    }
-}
-
-/* 7. RESPONSIVE ADJUSTMENTS */
-@media (max-width: 600px) {
-    .main-header h1 a {
-        font-size: 2rem; /* Shrink title on mobile devices */
-    }
-    
-    .main-nav a {
-        margin: 0 8px;
-        font-size: 0.9rem;
-    }
+.social-links a {
+    color: $text-light;
+    font-size: 1.5rem;
+    margin: 0 12px;
+    transition: color 0.2s ease;
+    &:hover { color: $primary-color; }
 }
