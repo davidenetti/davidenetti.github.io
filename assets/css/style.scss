@@ -1,11 +1,17 @@
 ---
-# Empty front matter (required for Jekyll processing)
+# Jekyll Front Matter - This file will be compiled into style.css
 ---
+
+/* 1. VARIABLES */
 $font-body: 'Inter', sans-serif;
 $font-headings: 'Poppins', sans-serif;
 $primary-color: #800020;
+$dark-red: #600018;
+$text-main: #333;
+$text-light: #777;
+$border-color: #eee;
 
-/* Reset base */
+/* 2. BASE RESET */
 * {
     margin: 0;
     padding: 0;
@@ -16,9 +22,8 @@ body {
     font-family: $font-body;
     line-height: 1.6;
     background-color: #ffffff;
-    color: #333;
-    max-width: 900px;
-    margin: 0 auto;
+    color: $text-main;
+    /* Max-width is handled by the .container class for better flexibility */
 }
 
 h1, h2, h3 {
@@ -26,30 +31,46 @@ h1, h2, h3 {
     font-weight: 700;
 }
 
+/* Layout container for consistent alignment */
 .container {
     max-width: 800px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
+/* 3. HEADER & NAVIGATION */
 .main-header {
-    background-color: #800020;
+    background-color: $primary-color;
     color: #ffffff;
     padding: 60px 0;
     text-align: center;
     margin-bottom: 40px;
-    border-bottom: 5px solid #600018;
+    border-bottom: 5px solid $dark-red;
+
+    h1 a {
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 3rem;
+        font-weight: 700;
+    }
+
+    .description {
+        opacity: 0.8;
+        font-size: 1.1rem;
+        margin-top: 10px;
+    }
 }
 
 .main-nav {
-    margin-top: 20px;
+    margin-top: 25px;
     
     a {
         color: rgba(255, 255, 255, 0.8);
         text-decoration: none;
         margin: 0 15px;
         font-weight: 500;
-        transition: color 0.3s;
+        transition: all 0.3s ease;
+        padding-bottom: 5px;
 
         &:hover {
             color: #fff;
@@ -58,43 +79,36 @@ h1, h2, h3 {
     }
 }
 
-.main-header h1 a {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 3rem;
-    font-weight: 700;
-}
-
-.main-header .description {
-    opacity: 0.8;
-    font-size: 1.1rem;
-    margin-top: 10px;
-}
-
+/* 4. POST LISTING */
 .post-list {
     margin-top: 30px;
 }
 
 .post-item {
     margin-bottom: 40px;
-    padding-bottom: 20px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid $border-color;
+
+    /* Prevents double borders when followed by the footer */
+    &:last-child {
+        border-bottom: none;
+    }
 }
 
 .post-meta {
     font-size: 0.9rem;
-    color: #888;
+    color: $text-light;
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
 }
 
 .post-title {
-    margin-top: 0;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
     font-size: 1.8rem;
     
     a {
         text-decoration: none;
-        color: #333;
+        color: $text-main;
         transition: color 0.2s ease;
 
         &:hover {
@@ -104,28 +118,30 @@ h1, h2, h3 {
 }
 
 .post-excerpt {
-    color: #666;
+    color: #555;
     font-size: 1.1rem;
     line-height: 1.7;
 }
 
+/* 5. FOOTER & SOCIAL LINKS */
 .main-footer {
     text-align: center;
-    padding: 40px 0;
-    margin-top: 60px;
-    border-top: 1px solid #eee;
-    font-family: $font-body;
-    font-size: 1rem;
-    color: #777;
+    padding: 60px 0;
+    margin-top: 40px;
+    border-top: 1px solid $border-color;
+    color: $text-light;
+    font-size: 0.95rem;
+
+    p { margin-top: 10px; }
 }
 
 .social-links {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     
     a {
-        color: #777;
+        color: $text-light;
         font-size: 1.5rem;
-        margin: 0 10px;
+        margin: 0 12px;
         transition: color 0.2s ease;
 
         &:hover {
@@ -134,3 +150,14 @@ h1, h2, h3 {
     }
 }
 
+/* 6. RESPONSIVE ADJUSTMENTS */
+@media (max-width: 600px) {
+    .main-header h1 a {
+        font-size: 2rem; /* Shrink title on mobile devices */
+    }
+    
+    .main-nav a {
+        margin: 0 8px;
+        font-size: 0.9rem;
+    }
+}
