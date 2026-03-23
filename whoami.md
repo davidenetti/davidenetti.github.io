@@ -4,7 +4,7 @@ title: Who is Davide Netti
 ---
 
 ## Intro
-I'm Davide Netti, an Italian Computer Scientist and hacker—in the original sense of the term: someone who loves to understand technology (and more) at a deep, fundamental level. I have always been passionate about technology and computing. While it hasn't been my only interest, it is certainly one I've cultivated since an early age, eventually moving into basic programming and exploring the world of Android modding and other hardware during my high school years.
+I'm Davide Netti, an Italian Computer Scientist and **hacker** in the original sense of the term: someone who loves to understand technology (and more) at a deep level. I have always been passionate about technology and computing. While it hasn't been my only interest, it is certainly one I've cultivated since an early age, eventually moving into basic programming and exploring the world of Android modding and other hardware during my high school years.
 
 ## Academic Background
 After high school, I realized that computer science could be both an excellent career path and a way to further pursue my passion. I earned my Bachelor’s degree in Computer Science from the *Università del Piemonte Orientale (UPO)*, with a dissertation focused on Meltdown and Spectre vulnerabilities, specifically exploring the intersection of hardware/software flaws and side-channel attacks. 
