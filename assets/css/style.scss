@@ -83,7 +83,95 @@ h1, h2, h3 {
     }
 }
 
-/* 4. POST LISTING */
+/* 4. SEARCH BAR STYLING */
+#search-container {
+    position: relative; /* Essential to anchor the floating results */
+    max-width: 400px;
+    margin: 20px auto 0; /* Centers the bar and gives space from nav */
+    z-index: 100;
+}
+
+#search-input {
+    width: 100%;
+    padding: 12px 20px;
+    font-family: $font-body;
+    font-size: 0.95rem;
+    color: $text-main;
+    background-color: rgba(255, 255, 255, 0.95);
+    border: 2px solid transparent;
+    border-radius: 25px; /* Rounded pill shape */
+    outline: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+    &:focus {
+        background-color: #ffffff;
+        border-color: #ffcc00; /* Matching your hover color */
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    }
+}
+
+/* Floating Results Dropdown */
+#results-container {
+    position: absolute; /* Floats over the content */
+    top: calc(100% + 10px);
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    max-height: 300px;
+    overflow-y: auto; /* Scroll if many results */
+    text-align: left;
+    
+    /* Hide if empty (Simple-Jekyll-Search will fill it) */
+    &:empty {
+        display: none;
+    }
+}
+
+#results-container li {
+    padding: 0;
+    border-bottom: 1px solid #f0f0f0;
+
+    &:last-child {
+        border-bottom: none;
+    }
+
+    a {
+        display: block;
+        padding: 12px 20px;
+        color: $text-main;
+        text-decoration: none;
+        font-weight: 500;
+        transition: background 0.2s;
+
+        &:hover {
+            background-color: #f8f8f8;
+            color: $primary-color;
+        }
+    }
+
+    .post-date {
+        display: block;
+        font-size: 0.75rem;
+        color: $text-light;
+        margin-top: 2px;
+    }
+}
+
+/* Customizing the "No Results" message style */
+#results-container li:only-child:not(:has(a)) {
+    padding: 15px 20px;
+    color: $text-light;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* 5. POST LISTING */
 .post-item {
     margin-bottom: 40px;
     padding-bottom: 30px;
@@ -124,7 +212,7 @@ h1, h2, h3 {
     white-space: nowrap; /* Prevents the date from wrapping to a new line */
 }
 
-/* 5. FOOTER & SOCIAL LINKS */
+/* 6. FOOTER & SOCIAL LINKS */
 .main-footer {
     text-align: center;
     padding: 60px 0;
@@ -151,7 +239,7 @@ h1, h2, h3 {
     }
 }
 
-/* 6. RESPONSIVE ADJUSTMENTS */
+/* 7. RESPONSIVE ADJUSTMENTS */
 @media (max-width: 600px) {
     .main-header h1 a {
         font-size: 2rem; /* Shrink title on mobile devices */
