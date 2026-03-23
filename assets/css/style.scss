@@ -54,32 +54,43 @@ h1, h2, h3 {
     margin-top: 10px;
 }
 
-.content {
-    padding: 20px 0;
+.post-list {
+    margin-top: 30px;
 }
 
-.content ul {
-    list-style: none;
-    padding: 0;
+.post-item {
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee; // Linea di separazione sottile
 }
 
-.content li {
-    margin-bottom: 10px;
-}
-
-.content a {
-    text-decoration: none;
-    color: #800020;
-    font-weight: 500;
-}
-
-.content a:hover {
-    text-decoration: underline;
-}
-
-.content span {
-    color: #777;
+.post-meta {
     font-size: 0.9rem;
+    color: #888;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.post-title {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.8rem;
+    
+    a {
+        text-decoration: none;
+        color: #333; // Titolo scuro
+        transition: color 0.2s ease;
+
+        &:hover {
+            color: $primary-color; // Vira al bordò solo al passaggio
+        }
+    }
+}
+
+.post-excerpt {
+    color: #666;
+    font-size: 1.1rem;
+    line-height: 1.7;
 }
 
 .main-footer {
