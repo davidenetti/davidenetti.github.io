@@ -41,6 +41,23 @@ h1, h2, h3 {
     border-bottom: 5px solid #600018;
 }
 
+.main-nav {
+    margin-top: 20px;
+    
+    a {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        margin: 0 15px;
+        font-weight: 500;
+        transition: color 0.3s;
+
+        &:hover {
+            color: #fff;
+            border-bottom: 2px solid #fff;
+        }
+    }
+}
+
 .main-header h1 a {
     color: #ffffff;
     text-decoration: none;
