@@ -14,4 +14,4 @@ I then continued my studies, balancing a full-time career in cybersecurity, by p
 ## Industry Background
 Throughout my academic journey, I have consistently maintained a full-time professional role in the field. Even before completing my Bachelor’s degree, I began working as a SOC Analyst for a major Italian technology firm. I later transitioned into development and offensive security, first within a startup environment and subsequently in a more structured corporate setting. 
 
-I have developed comprehensive expertise across both offensive and defensive security domains. As of the publication of this page, I have over five years of professional experience in the industry.
+I have developed comprehensive expertise across both offensive and defensive security domains. I've started my career in the cybersecurity industry in late 2019.
