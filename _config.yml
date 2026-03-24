@@ -6,3 +6,4 @@ url: "https://davidenetti.github.io"
 markdown: kramdown
 plugins:
   - jekyll-feed
+  - jekyll-sitemap
