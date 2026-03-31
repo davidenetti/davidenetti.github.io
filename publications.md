@@ -7,4 +7,4 @@ title: Publications & CVEs
 
 
 ## Security Advisories (CVEs)
-**CVE-2025-14963**: With Andrea Monzani and Antonio Parata we found that fekern.sys is vulnerable to an arbitrary read abusing a specific IOCTL.
+**CVE-2025-14963**: with Andrea Monzani and Antonio Parata we found that fekern.sys is vulnerable to an arbitrary read abusing a specific IOCTL.
