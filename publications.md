@@ -4,7 +4,7 @@ title: Publications & CVEs
 ---
 
 ## Scientific Publications
-
+- **A hybrid static-dynamic analysis for identifying BYOVD vulnerabilities** (https://doi.org/10.1016/j.cose.2026.105194): I've contributed to this research project regarding BYOVD topic.
 
 ## Security Advisories (CVEs)
 - **CVE-2026-35553**: with Andrea Monzani and Antonio Parata we found a buffer overflow in this driver exploitable by abusing the RtlQueryRegistryValues function.
